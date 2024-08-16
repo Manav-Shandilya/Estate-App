@@ -1,0 +1,116 @@
+@import "../../responsive.scss";
+
+.newPostPage {
+  height: 100%;
+  display: flex;
+
+  .formContainer {
+    flex: 3;
+    overflow: scroll;
+
+    .wrapper {
+      margin: 30px 50px 100px 0px;
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .item {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          input {
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+          }
+
+          select {
+            padding: 19px;
+          }
+
+          &.description {
+            width: 100%;
+            height: 320px;
+
+            .quill > .ql-container > .ql-editor{
+              height: 200px;
+              font-size: 16px;
+
+            }
+
+            @include sm {
+              margin-bottom: 80px;
+            }
+          }
+        }
+        
+        .sendButton {
+          width: 30%;
+          border-radius: 5px;
+          border: none;
+          background-color: teal;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+
+          @include md {
+            height: 50px;
+            margin-top: 20px;
+          }
+
+          @include sm{
+            // width: 50px;
+            height: 50px;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .sideContainer {
+    height: 100%;
+    flex: 2;
+    background-color: #fcf5f3;
+    // display: flex;
+    display: grid; 
+    // grid-template-columns: repeat(2, 1fr); 
+    // gap: 20px;
+    // flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+
+    img {
+      width: 80%;
+      height: 80%;
+      // grid-template-columns: repeat(2, 1fr); 
+      // gap: 20px;
+      // max-width: 100%;
+      // max-height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .uploadButton {
+      display: flex;
+      // justify-content: center;
+      margin-left: 28%;
+      margin-bottom: 30px;
+
+      @include md{
+        margin-left: 14%;
+      }
+
+      @include sm{
+        margin-left: 5%;
+      }
+    }
+  }
+}
